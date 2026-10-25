@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wedding of Naruto & Hinata</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="undangan.css">
+</head>
+<body class="bg-light text-dark">
+
+  <audio id="audio-bg" loop preload="metadata">
+    <source src="asset/her.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+  </audio>
+
+  <button id="btn-music" class="btn-music-float d-none" type="button" onclick="toggleAudio()" aria-label="Jeda musik" aria-pressed="true">
+    <i id="icon-music" class="fa-solid fa-compact-disc fa-spin" aria-hidden="true"></i>
+  </button>
+
+  <!-- ================= COVER / OVERLAY ================= -->
+  <section id="cover" class="cover-overlay d-flex flex-column justify-content-center align-items-center text-center text-white p-3">
+    <div class="cover-content text-center">
+      <p class="text-uppercase tracking-widest mb-2">The Wedding Of</p>
+      <h1 class="font-serif display-3 text-gold mb-3">Naruto & Hinata</h1>
+      <p class="mb-4">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+      
+      <!-- Nama Tamu Dinamis dari URL Parameter -->
+      <div class="guest-box mx-auto my-3 p-3 rounded-4">
+        <h3 id="guest-name" class="fw-bold m-0 text-white">Nama Tamu Undangan</h3>
+      </div>
+      
+      <p class="small mb-4">Mempunyai kehormatan mengundang Anda untuk hadir di hari bahagia kami.</p>
+      
+      <button id="btn-open" class="btn btn-gold btn-lg rounded-pill px-4 shadow">
+        <i class="fa-solid fa-envelope-open me-2"></i> Buka Undangan
+      </button>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER (Hidden by default) -->
+  <div id="main-content" class="main-content d-none">
+
+    <!-- Navbar Sticky Bottom for Mobile -->
+    <nav class="navbar fixed-bottom navbar-light bg-white border-top shadow-lg py-2" aria-label="Navigasi undangan">
+      <div class="container d-flex justify-content-around text-center">
+        <a href="#home" class="nav-link text-secondary"><i class="fa-solid fa-house d-block"></i><small>Beranda</small></a>
+        <a href="#couple" class="nav-link text-secondary"><i class="fa-solid fa-heart d-block"></i><small>Mempelai</small></a>
+        <a href="#event" class="nav-link text-secondary"><i class="fa-solid fa-calendar-days d-block"></i><small>Acara</small></a>
+        <a href="#gallery" class="nav-link text-secondary"><i class="fa-solid fa-images d-block"></i><small>Galeri</small></a>
+        <a href="#music" class="nav-link text-secondary"><i class="fa-solid fa-music d-block"></i><small>Musik</small></a>
+        <a href="#rsvp" class="nav-link text-secondary"><i class="fa-solid fa-paper-plane d-block"></i><small>RSVP</small></a>
+      </div>
+    </nav>
+
+    <!-- ================= HOME HERO ================= -->
+    <section id="home" class="hero-section text-center text-white d-flex align-items-center justify-content-center">
+      <div class="hero-overlay"></div>
+      <div class="hero-text p-4">
+        <p class="text-uppercase tracking-widest text-gold mb-1">Mengarungi Bahtera Rumah Tangga</p>
+        <h1 class="font-serif display-2">Naruto & Hinata</h1>
+        <div class="floral-divider" aria-hidden="true"><span></span><i class="fa-solid fa-heart"></i><span></span></div>
+        <p class="lead font-italic mt-2">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup..."</p>
+        <p class="verse-reference">QS. Ar-Rum: 21</p>
+        <div class="mt-4">
+          <span class="badge bg-gold px-3 py-2 fs-6"><i class="fa-regular fa-calendar me-2"></i>Sabtu, 12 Desember 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="music-section text-center">
+      <div class="container">
+        <div class="music-card">
+          <div class="music-disc" aria-hidden="true"><i class="fa-solid fa-music"></i></div>
+          <div class="music-details">
+            <p class="eyebrow mb-1">A little soundtrack for our day</p>
+            <h2 class="font-serif section-title mb-1">Musik Pengiring</h2>
+            <p class="text-muted mb-3">“her” <span aria-hidden="true">·</span> JVKE</p>
+            <button class="btn btn-outline-gold rounded-pill px-4" type="button" onclick="toggleAudio()">
+              <i class="fa-solid fa-play me-2" aria-hidden="true"></i>Putar / Jeda Musik
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MEMPELAI / COUPLE ================= -->
+    <section id="couple" class="py-5 bg-white text-center">
+      <div class="container">
+        <h2 class="font-serif text-gold section-title">Pasangan Mempelai</h2>
+        <p class="text-muted mb-5">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami:</p>
+        
+        <div class="row align-items-center gy-4">
+          <!-- Mempelai Pria -->
+          <div class="col-md-5">
+            <div class="card border-0 shadow-sm p-4 rounded-4 profile-card">
+              <div class="avatar-wrapper mx-auto mb-3">
+                <img src="asset/zaki.png" alt="Naruto mengenakan pakaian pernikahan" class="img-fluid avatar-img">
+              </div>
+              <h3 class="font-serif text-dark mb-1">Naruto</h3>
+              <p class="text-gold fw-bold">Putra Pertama dari</p>
+              <p class="small text-muted mb-3">Keluarga Uzumaki</p>
+              <div>
+                <a href="https://instagram.com" target="_blank" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Separator -->
+          <div class="col-md-2 my-3">
+            <h1 class="font-cursive text-gold display-3">&</h1>
+          </div>
+
+          <!-- Mempelai Wanita -->
+          <div class="col-md-5">
+            <div class="card border-0 shadow-sm p-4 rounded-4 profile-card">
+              <div class="avatar-wrapper mx-auto mb-3">
+                <img src="asset/talitha.png" alt="Hinata mengenakan pakaian pernikahan" class="img-fluid avatar-img">
+              </div>
+              <h3 class="font-serif text-dark mb-1">Hinata</h3>
+              <p class="text-gold fw-bold">Putri Pertama dari</p>
+              <p class="small text-muted mb-3">Keluarga Hyuga</p>
+              <div>
+                <a href="https://instagram.com" target="_blank" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ACARA & COUNTDOWN ================= -->
+    <section id="event" class="py-5 bg-light-cream text-center">
+      <div class="container">
+        <h2 class="font-serif text-gold section-title">Jadwal Acara</h2>
+        <p class="text-muted mb-4">Insya Allah rangkaian acara akan dilaksanakan pada:</p>
+        <p class="event-date"><i class="fa-regular fa-calendar me-2" aria-hidden="true"></i>Sabtu, 12 Desember 2026</p>
+
+        <!-- Countdown Timer -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-11 col-md-8">
+            <div class="countdown-wrapper d-flex justify-content-around p-3 rounded-4 shadow-sm bg-white">
+              <div><span id="days" class="display-6 fw-bold text-gold">00</span><p class="small m-0 text-muted">Hari</p></div>
+              <div class="vr"></div>
+              <div><span id="hours" class="display-6 fw-bold text-gold">00</span><p class="small m-0 text-muted">Jam</p></div>
+              <div class="vr"></div>
+              <div><span id="minutes" class="display-6 fw-bold text-gold">00</span><p class="small m-0 text-muted">Menit</p></div>
+              <div class="vr"></div>
+              <div><span id="seconds" class="display-6 fw-bold text-gold">00</span><p class="small m-0 text-muted">Detik</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Akad Nikah -->
+          <div class="col-md-5">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 event-card">
+              <i class="fa-solid fa-ring text-gold fs-1 mb-3"></i>
+              <h3 class="font-serif text-dark">Akad Nikah</h3>
+              <p class="text-muted"><i class="fa-regular fa-clock me-1"></i> 08.00 WIB - 10.00 WIB</p>
+              <p class="fw-bold mb-1">Gedung Grand Ballroom Surabaya</p>
+              <p class="small text-muted">Jl. Pemuda No. 123, Genteng, Surabaya</p>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Gedung+Grand+Ballroom+Surabaya" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold rounded-pill btn-sm mt-auto">
+                <i class="fa-solid fa-map-location-dot me-1"></i> Buka Google Maps
+              </a>
+            </div>
+          </div>
+
+          <!-- Resepsi -->
+          <div class="col-md-5">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 event-card">
+              <i class="fa-solid fa-champagne-glasses text-gold fs-1 mb-3"></i>
+              <h3 class="font-serif text-dark">Resepsi Pernikahan</h3>
+              <p class="text-muted"><i class="fa-regular fa-clock me-1"></i> 11.00 WIB - Selesai</p>
+              <p class="fw-bold mb-1">Gedung Grand Ballroom Surabaya</p>
+              <p class="small text-muted">Jl. Pemuda No. 123, Genteng, Surabaya</p>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Gedung+Grand+Ballroom+Surabaya" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold rounded-pill btn-sm mt-auto">
+                <i class="fa-solid fa-map-location-dot me-1"></i> Buka Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALERI FOTO ================= -->
+    <section id="gallery" class="py-5 bg-white text-center">
+      <div class="container">
+        <h2 class="font-serif text-gold section-title">Galeri Bahagia</h2>
+        <p class="text-muted mb-4">Momen-momen indah perjalanan cinta kami.</p>
+
+        <div class="row g-3">
+          <div class="col-6 col-md-4">
+            <img src="asset/naruto-wedding.png" alt="Naruto, Hinata, dan teman-teman di hari pernikahan" class="img-fluid rounded-3 shadow-sm gallery-img">
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="asset/naruto-hinata-facebook.jpg" alt="Ilustrasi pesta pernikahan bersama para ninja" class="img-fluid rounded-3 shadow-sm gallery-img">
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="asset/naruto-wedding-figure.jpg" alt="Patung Naruto dan Hinata dalam busana pernikahan" class="img-fluid rounded-3 shadow-sm gallery-img">
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="asset/gallery-wedding-1.png" alt="Naruto dan Hinata berdiri bersama dalam busana pernikahan" class="img-fluid rounded-3 shadow-sm gallery-img" loading="lazy">
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="asset/gallery-wedding-2.png" alt="Naruto dan Hinata dalam momen pernikahan" class="img-fluid rounded-3 shadow-sm gallery-img" loading="lazy">
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="asset/gallery-wedding-3.png" alt="Potret Naruto dan Hinata dengan bunga sakura" class="img-fluid rounded-3 shadow-sm gallery-img" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KADO DIGITAL / AMPLOP ================= -->
+    <section id="amplop-digital" class="py-5 bg-light-cream text-center">
+      <div class="container">
+        <h2 class="font-serif text-gold section-title">Amplop Digital</h2>
+        <p class="text-muted mb-4">Doa restu Anda merupakan hadiah terindah. Namun jika ingin memberi hadiah fisik/cashless, Anda dapat menyatukannya di bawah ini:</p>
+
+        <div class="row justify-content-center g-4">
+          <!-- Bank BCA -->
+          <div class="col-md-5">
+            <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+              <i class="fa-solid fa-credit-card fs-1 text-gold mb-2"></i>
+              <h5 class="fw-bold text-dark">Bank BCA</h5>
+              <p class="mb-1 text-muted fs-5 fw-bold" id="norek-bca">1234 5678 90</p>
+              <p class="small text-muted">a.n. Naruto</p>
+              <button class="btn btn-outline-gold rounded-pill btn-sm mx-auto" onclick="copyToClipboard('norek-bca', 'No. Rekening BCA')">
+                <i class="fa-regular fa-copy me-1"></i> Salin No. Rekening
+              </button>
+            </div>
+          </div>
+
+          <!-- Bank Mandiri -->
+          <div class="col-md-5">
+            <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+              <i class="fa-solid fa-wallet fs-1 text-gold mb-2"></i>
+              <h5 class="fw-bold text-dark">Bank Mandiri</h5>
+              <p class="mb-1 text-muted fs-5 fw-bold" id="norek-mandiri">0987 6543 21</p>
+              <p class="small text-muted">a.n. Hinata</p>
+              <button class="btn btn-outline-gold rounded-pill btn-sm mx-auto" onclick="copyToClipboard('norek-mandiri', 'No. Rekening Mandiri')">
+                <i class="fa-regular fa-copy me-1"></i> Salin No. Rekening
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RSVP & UCAPAN ================= -->
+    <section id="rsvp" class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="font-serif text-gold section-title">Konfirmasi Kehadiran & Ucapan</h2>
+          <p class="text-muted">Berikan doa restu dan konfirmasi kehadiran Anda di bawah ini.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <!-- Form RSVP -->
+            <form id="rsvp-form" class="card border-0 shadow-sm p-4 rounded-4 bg-light">
+              <div class="mb-3">
+                <label for="input-nama" class="form-label fw-bold">Nama Lengkap</label>
+                <input type="text" class="form-control rounded-3" id="input-nama" placeholder="Masukkan nama Anda" required>
+              </div>
+              
+              <div class="mb-3">
+                <label for="input-kehadiran" class="form-label fw-bold">Konfirmasi Kehadiran</label>
+                <select class="form-select rounded-3" id="input-kehadiran" required>
+                  <option value="" disabled selected>-- Pilih Kehadiran --</option>
+                  <option value="Hadir">Hadir</option>
+                  <option value="Tidak Hadir">Tidak Hadir</option>
+                  <option value="Ragu-ragu">Masih Ragu-Ragu</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="input-ucapan" class="form-label fw-bold">Ucapan & Doa Restu</label>
+                <textarea class="form-control rounded-3" id="input-ucapan" rows="3" placeholder="Tuliskan ucapan & doa hangat..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gold w-100 rounded-pill py-2 shadow-sm">
+                <i class="fa-solid fa-paper-plane me-1"></i> Kirim Ucapan
+              </button>
+            </form>
+
+            <!-- List Ucapan / Buku Tamu -->
+            <div class="mt-5">
+              <h4 class="font-serif text-dark mb-3"><i class="fa-regular fa-comments text-gold me-2"></i>Buku Tamu (<span id="guestbook-count">2</span>)</h4>
+              <div id="guestbook-list" class="guestbook-scroll vstack gap-3">
+                <div class="p-3 bg-light rounded-3 border-start border-4 border-gold">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <strong class="text-dark">Budi Santoso</strong>
+                    <span class="badge bg-success">Hadir</span>
+                  </div>
+                  <p class="small text-muted m-0">"Selamat untuk Naruto dan Hinata! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin."</p>
+                </div>
+
+                <div class="p-3 bg-light rounded-3 border-start border-4 border-gold">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <strong class="text-dark">Siti Rahma</strong>
+                    <span class="badge bg-danger">Tidak Hadir</span>
+                  </div>
+                  <p class="small text-muted m-0">"Selamat yaaa! Mohon maaf belum bisa hadir secara langsung, tapi doa terbaik selalu menyertai kalian."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="py-4 text-center bg-dark text-white-50 pb-5 mb-4">
+      <div class="container">
+        <h3 class="font-serif text-gold mb-2">Naruto & Hinata</h3>
+        <p class="small mb-2">Terima kasih atas doa & dukungan Anda.</p>
+        <p class="small mb-2">Sumber gambar Naruto & Hinata: <a class="text-white-50" href="https://www.pinterest.com/pin/hinatas-wedding-day--89298005096334410/" target="_blank" rel="noopener noreferrer">Pinterest</a>, <a class="text-white-50" href="https://www.facebook.com/groups/1504627896723633/posts/2544594302726982/" target="_blank" rel="noopener noreferrer">Facebook</a>, dan <a class="text-white-50" href="https://avol.sg/products/sakura-studio-naruto-and-hinata-hyuga-s-wedding-frame" target="_blank" rel="noopener noreferrer">Avolounge</a>.</p>
+        <p class="small mb-2">Musik: “her” — JVKE.</p>
+        <p class="small m-0 text-secondary">&copy; 2026 Crafted with ❤️ for Web Development Assignment.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div id="toast-notif" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toast-message">
+          Pesan notifikasi
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS Script -->
+  <script src="undangan.js"></script>
+</body>
+</html>
